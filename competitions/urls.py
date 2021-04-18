@@ -4,6 +4,6 @@ from . import views
 
 # Define addition route for project .
 urlpatterns = [
-    path('', views.home, name='competions-home'),
+    path('', views.index, name='competitions-home'),
     path('about/', views.about, name='competitions-about'),
 ]
