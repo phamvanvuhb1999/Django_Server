@@ -1,0 +1,15 @@
+{% extends 'competitions/base.html' %} {% block content%}
+    <h1>DashBoard</h1>
+    {% for competition in competitions %}
+        <article class="media content-section" style="display:flex; flex-direction:column">
+            <div class="media-body">
+                <a href="#" class="mr-2">{{competiton.created_by}}</a>
+                <small class="text-muted">{{competition.start_time}}</small>
+            </div>
+            <h2>
+                <a class="article-title" href="{% url 'competition-detail' competition.id %}">{{competition.name}}</a>
+            </h2>
+            <p class="article-content">{{competition.description}}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
