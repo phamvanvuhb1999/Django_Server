@@ -1,0 +1,13 @@
+{% extends 'competitions/base.html' %} {% block content%} {% comment %} {% for competition in competitions %} {% endcomment %}
+<article class="media content-section" style="display:flex; flex-direction:column">
+    <div class="media-body">
+        <a href="#" class="mr-2">{{object.created_by}}</a>
+        <small class="text-muted">{{ojbect.start_time}}</small>
+    </div>
+    <h2 class="article-title">
+        {{object.name}}
+    </h2>
+    <p class="article-content">{{object.description}}</p>
+    <a class="btn btn-primary" href="{{object.exam_lo.url}}">detail here</a>
+</article>
+{% endblock %}
