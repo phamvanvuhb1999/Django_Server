@@ -1,13 +1,33 @@
-{% extends 'competitions/base.html' %} {% block content%} {% comment %} {% for competition in competitions %} {% endcomment %}
+{% extends 'competitions/base.html' %}
+{% load static %} 
+{% block content%} {% comment %} {% for competition in competitions %} {% endcomment %}
 <article class="media content-section" style="display:flex; flex-direction:column">
     <div class="media-body">
         <a href="#" class="mr-2">{{object.created_by}}</a>
-        <small class="text-muted">{{ojbect.start_time}}</small>
+        <small class="text-muted">{{object.start_time}}</small>
     </div>
+    {% if object.created_by == user%}
+        <div>
+            <a class="btn btn-secondary" href="{% url 'competition-update' object.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'competition-delete' object.id %}">Delete</a>
+        </div>
+    {% endif %}
+
     <h2 class="article-title">
         {{object.name}}
     </h2>
     <p class="article-content">{{object.description}}</p>
-    <a class="btn btn-primary" href="{{object.exam_lo.url}}">detail here</a>
+    {% if object.exam_lo %}
+        <embed type="application/pdf" src="{{ object.exam_lo.url }}" width="300" height="200">
+        <div>
+            <a class="btn btn-primary" href="{{object.exam_lo.url}}">detail here</a>
+            <a class="btn btn-primary ml-3" href="/register-test?competition={{object.id}}">Join</a>
+            <a class="btn btn-primary ml-3" href="{% url 'register_home' object.id %}">Bailams</a>
+        </div>
+    {% endif %}
 </article>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profile/main.css' %}">
 {% endblock %}

@@ -1,0 +1,9 @@
+.container .content-section {
+    padding: 10px;
+}
+
+input {
+    float: right;
+    width: 75%;
+    border-radius: 5px;
+}

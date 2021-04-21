@@ -31,11 +31,30 @@ ul {
 }
 
 .media-body {
-    margin-top: 30px;
-    padding-left: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
 }
 
 figure {
     width: 100%;
     height: 100%;
+}
+
+.content-section {
+    border-radius: 5px;
+    background-color: beige;
+}
+
+.btn {
+    margin: 10px 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5e9;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 10px;
 }

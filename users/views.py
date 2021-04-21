@@ -5,7 +5,7 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def register(request):
+def register(request, *args, **kwargs):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -19,8 +19,9 @@ def register(request):
         'form':form
     })
 
+
 @login_required
-def profile(request):
+def profile(request, *args, **kwargs):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)

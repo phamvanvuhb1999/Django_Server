@@ -8,11 +8,8 @@ from .models import Profile
 def create_profile(sender, instance, created, **kwargs):
     
     if created:
-        print('create profile.')
         Profile.objects.create(user=instance)
-        save_profile(instance)
 
 
-def save_profile(instance):
-    print('save profile.')
+def save_profile(sender, instance, **kwargs):
     instance.profile.save()

@@ -1,1 +1,5 @@
 db.sqlite3
+competitions/migrations/__pycache__/
+users/__pycache__/
+users/migrations/__pycache__/
+django_server/__pycache__/

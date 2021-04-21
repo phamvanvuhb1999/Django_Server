@@ -1,1 +1,12 @@
 db.sqlite3
+media/*
+competitions/migrations/*
+competitions/__pycache__/*
+django_server/__pycache__/*
+users/__pycache__/*
+users/migrations/*
+registers/__pycache__/*
+registers/migrations/*
+.env
+.idea/
+competitions.json

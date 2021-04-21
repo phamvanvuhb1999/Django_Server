@@ -1,0 +1,20 @@
+{% extends 'competitions/base.html' %} {% block content%}
+    <div style="display:flex; direction:column;">
+        {% comment %} {% block temp contest_name = bailams[0].name %} {% endcomment %}
+        <h1>Contest {{ contest_name }}</h1>
+        <a class="btn btn-danger ml-3" href="{% url 'register-bailam' contest_id %}">Make your test.</a>
+    </div>
+    {% for bailam in bailams %}
+        <article class="media content-section" style="display:flex; flex-direction:column">
+            <div class="media-body">
+                <small class="text-muted">{{bailam.posted_time}}</small>
+            </div>
+            <h2>
+                {{bailam.name}}
+            </h2>
+            <p class="article-content">{{ bailam.percent }}%</p>
+            <p>{{ bailam.user_id.username }}</p>
+        </article>
+    {% endfor %}
+
+{% endblock %}

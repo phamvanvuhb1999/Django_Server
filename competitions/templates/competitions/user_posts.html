@@ -1,5 +1,5 @@
 {% extends 'competitions/base.html' %} {% block content%}
-    <h1>DashBoard</h1>
+    <h1 class="mb-3">Posts by {{ view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
     {% for competition in competitions %}
         <article class="media content-section" style="display:flex; flex-direction:column">
             <div class="media-body">
@@ -29,8 +29,8 @@
         {% endfor %}
 
         {% if page_obj.has_next %}
-            <a class="btn btn-danger mb-4" href="{{ page_obj.next_page_number }}" >Next</a>
-            <a class="btn btn-danger mb-4" href="{{ page_obj.paginator.num_pages }}" >End</a>
+            <a class="btn btn-danger mb-4" href="?page={{ page_obj.next_page_number }}" >Next</a>
+            <a class="btn btn-danger mb-4" href="?page={{ page_obj.paginator.num_pages }}" >End</a>
         {% endif %}
 
     {% endif %}

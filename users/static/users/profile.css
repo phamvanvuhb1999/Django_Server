@@ -7,7 +7,59 @@
     margin-left: 20rem;
 }
 
-.media-body {
-    margin-top: 30px;
+.content-section {
+    border-radius: 5px;
+    background-color: beige;
+}
+
+article {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5e9;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.form-group>div>p {
+    width: auto;
+    padding: 0px 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form-group>div>p>* {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.form-group>div>p>input {
+    float: right;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.form-group>div>p>textarea {
+    float: right;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.form-group>div>p>label {}
+
+.form-group>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group>button {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.form-group>legend {
     padding-left: 20px;
 }
